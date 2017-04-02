@@ -1,0 +1,59 @@
+body {
+	background-color: black;
+}
+.button {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  cursor: crosshair;
+}
+.pulse {
+  margin:100px;
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  background: rgb(250, 255, 255);
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.4);
+  animation-name: pulse, falling;
+  animation-duration: 6s, 5s;
+  animation-delay: 0s 10s;   
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: forwards, forwards;
+}
+
+.pulse:hover {
+  animation: none;
+}
+
+@keyframes falling{
+  100% { top: 300px; }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 229, 255, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 5px rgba(204, 229, 255, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204, 229, 255, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 229, 255, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 229, 255, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 5px rgba(204, 229, 255, 0);
+      box-shadow: 0 0 0 5px rgba(204, 229, 255, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204, 229, 255, 0);
+      box-shadow: 0 0 0 0 rgba(204, 229, 255, 0);
+  }
+}
